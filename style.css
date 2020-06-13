@@ -4,11 +4,12 @@ body {
   font-family: helvetica, arial, sans-serif;
   padding: 2em;
   background: #faf;
+  color: #505;
 }
 
-h1.crown {
+a, h1 {
   font-style: italic;
-  color: #373fff;
+  color: #090;
 }
 
 .tail {
@@ -21,6 +22,10 @@ h1.crown {
   color: #faf;
   box-sizing: border-box;
   padding: 10px;
+}
+
+.tail a {
+  color: #ada;
 }
 
 .tail .glitchButton .glitchButtonElement {
