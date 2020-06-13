@@ -20,6 +20,20 @@ h1 {
   background: #505;
 }
 
-.tail .glitchButtonElement {
+.tail .glitchButton .glitchButtonElement {
   background-image: url(https://glitch.com/edit/images/background-dark/icons/down-arrow.svg);
 }
+
+.tail .glitchButton .glitchOpenWindowElement {
+  bottom: 100%;
+  top: initial;
+}
+.tail  .glitchButton .tooltip.border {
+  border-bottom: 0px;
+  border-top: 10px solid #faf;
+  bottom: -11px;
+  top: initial;
+}
+.tail  .glitchButton .tooltip.fill {
+  display: none;
+} 
