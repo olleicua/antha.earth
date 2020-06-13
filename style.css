@@ -21,18 +21,24 @@ h1 {
 }
 
 .tail .glitchButton .glitchButtonElement {
-  background-image: url(https://glitch.com/edit/images/background-dark/icons/down-arrow.svg);
+  background: url(https://glitch.com/edit/images/background-dark/icons/down-arrow.svg);
+  transform: rotate(150deg);
+  padding: 5px;
 }
 
 .tail .glitchButton .glitchOpenWindowElement {
   bottom: 100%;
   top: initial;
+  border-radius: 0;
+  border: 0;
+  transform: rotate(-30deg);
 }
-.tail  .glitchButton .tooltip.border {
+.tail .glitchButton .tooltip.border {
   border-bottom: 0px;
   border-top: 10px solid #faf;
   bottom: -11px;
   top: initial;
+  right: 170px;
 }
 .tail  .glitchButton .tooltip.fill {
   display: none;
