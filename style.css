@@ -18,6 +18,9 @@ h1.crown {
   height: 60px;
   width: 100%;
   background: #505;
+  color: #faf;
+  box-sizing: border-box;
+  padding: 10px;
 }
 
 .tail .glitchButton .glitchButtonElement {
