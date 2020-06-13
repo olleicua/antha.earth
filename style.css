@@ -11,11 +11,6 @@ h1.crown {
   color: #373fff;
 }
 
-h1.crown {
-  padding-left: 100px;
-  height: 100px;
-}
-
 .tail {
   position: fixed;
   left: 0;
