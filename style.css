@@ -15,7 +15,11 @@ h1 {
   position: fixed;
   left: 0;
   bottom: 0;
-  height: 75px;
+  height: 60px;
   width: 100%;
   background: #505;
+}
+
+.tail .glitchButtonElement {
+  background-image: url(https://glitch.com/edit/images/background-dark/icons/down-arrow.svg);
 }
