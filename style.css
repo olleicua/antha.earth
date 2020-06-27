@@ -22,6 +22,7 @@ a, h1 {
   color: #faf;
   box-sizing: border-box;
   padding: 10px;
+  padding-right: 5em;
 }
 
 .tail a {
