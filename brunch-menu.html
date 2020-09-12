@@ -16,24 +16,23 @@
     <script src="/script.js" defer></script>
     <script>
       var menuData = [
-        ['']
-      ];
+        ['porridge', 'oatmeal, cerial, nuts, milk, cinnamon, sugar, chocolate chips'],
+        ['omolets', 'muenster, cheddar, smoked provalone, american, parmesan, onions, garlic, spinach, mushrooms, fresh-home-made-spinach-pesto'],
+        ['buiscuits', 'round/crescent, butter, cheese, fresh-home-made-spinach-pesto, gravy, sausage'],
+        ['tacos', 'literally anything']
+      ]
     </script>
   </head>  
   <body>
     
     <h2>
-      Brunch Menu
+      brunch menu
     </h2>
 
     <script>
       for (var i = 0; i < menuData.length; i++) {
-        var section = menuData[i];
-        document.write('<h3>' + section[0] + '</h3>');
-        for (var j = 0; j < section.selections.length; j++) {
-          var selection = sections[1][j];
-          document.write('<p><b>' + selection[0] + '</b> - ' + selection[1] + '</h3>');
-        }
+        var selection = menuData[i];
+        document.write('<p><b>' + selection[0] + '</b> - <i>' + selection[1] + '</i></h3>');
       }
     </script>
 
