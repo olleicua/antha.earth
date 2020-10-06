@@ -49,11 +49,11 @@ a, h1 {
   top: initial;
   right: 170px;
 }
-.tail  .glitchButton .tooltip.fill {
+.tail .glitchButton .tooltip.fill {
   display: none;
 } 
 
-.graphiti {
+.graffiti {
   width: 90%;
   padding: 0.5em;
   text-align: center;
@@ -61,7 +61,7 @@ a, h1 {
   box-sizing: border-box;
 }
 
-.graphiti img {
+.graffiti img {
   width: 100%;
 }
 
