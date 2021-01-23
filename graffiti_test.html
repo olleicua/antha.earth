@@ -43,13 +43,14 @@
       you are looking at: <a href="http://glitch.com">glitch</a> / <a href="/">antha's personal page</a> / graffiti
       <div class="glitchButton" style="position:absolute;top:10px;right:20px;"></div>
       <script src="https://button.glitch.me/button.js" defer></script>
-      
-      <script>
-        var $thumbs = document.querySelector('.thumbnails');
-        var $large = document.querySelector('.large');
-        $thumbs.style.height = window.outerHeight -
-      </script>
-
     </div>
+    <script>
+      var $g = document.querySelector('.graffiti');
+      var $thumbs = document.querySelector('.thumbnails');
+      var $large = document.querySelector('.large');
+      $thumbs.style.height = (window.outerHeight - 240) + 'px';
+      console.log($large, $g, ($g.offsetWidth - 110) + 'px');
+      $large.style.width = ($g.offsetWidth - 110) + 'px';
+    </script>
   </body>
 </html>

@@ -67,6 +67,11 @@ a, h1 {
 .graffiti .thumbnails {
   font-size: 18px;
   width: 100px;
+  float: left;
+}
+
+.grafiti .large {
+  float: right;
 }
 
 .brunch-menu p {
