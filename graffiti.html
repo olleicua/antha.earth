@@ -30,10 +30,10 @@
       <img src="https://cdn.glitch.com/08da0bf4-42da-4bae-81e9-1e5582b14462%2FIMG_20200731_184910.jpg?v=1596240263066" /><br />
       <img src="https://cdn.glitch.com/08da0bf4-42da-4bae-81e9-1e5582b14462%2FIMG_20200731_184900.jpg?v=1596240272668" /><br />
       <img src="https://cdn.glitch.com/08da0bf4-42da-4bae-81e9-1e5582b14462%2FIMG_20200731_184857.jpg?v=1596240281531" /><br />
-      <p>
-        <a href="/">back</a>
-      </p>
     </div>
+    <p class="back">
+      <a href="/">back</a>
+    </p>
 
     <!-- include the Glitch button to show what the webpage is about and
           to make it easier for folks to view source and remix -->
@@ -44,11 +44,13 @@
 
     </div>
     <script>
+      console.log(EXIF)
       document.querySelectorAll('.graffiti img').forEach(function(img) {
-        EXIF.getData(img, function(x) {
-          img.
-          EXIF.getTag(this, 'DateTime')
-        })
+        console.log(img, EXIF.getTag(img, 'DateTime'))
+        EXIF.getData(img, function() {console.log(1,EXIF.getTag(img, 'DateTime'))})
+        EXIF.getData(img, function() {
+          img.insertAdjacentHTML('afterend', '<span class="caption">' + EXIF.getTag(img, 'DateTime') + '</span>');
+        });
       });
     </script>
   </body>
