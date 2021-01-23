@@ -32,8 +32,9 @@
         <img src="https://cdn.glitch.com/08da0bf4-42da-4bae-81e9-1e5582b14462%2FIMG_20200731_184900.jpg?v=1596240272668" /><br />
         <img src="https://cdn.glitch.com/08da0bf4-42da-4bae-81e9-1e5582b14462%2FIMG_20200731_184857.jpg?v=1596240281531" /><br />
       </div>
+      <img class="large" src="https://cdn.glitch.com/08da0bf4-42da-4bae-81e9-1e5582b14462%2FIMG_20200510_131827.jpg?v=1593223506443" />
     </div>
-    <p>
+    <p class="back">
       <a href="/">back</a>
     </p>
     <!-- include the Glitch button to show what the webpage is about and
@@ -42,6 +43,12 @@
       you are looking at: <a href="http://glitch.com">glitch</a> / <a href="/">antha's personal page</a> / graffiti
       <div class="glitchButton" style="position:absolute;top:10px;right:20px;"></div>
       <script src="https://button.glitch.me/button.js" defer></script>
+      
+      <script>
+        var $thumbs = document.querySelector('.thumbnails');
+        var $large = document.querySelector('.large');
+        $thumbs.style.height = window.outerHeight -
+      </script>
 
     </div>
   </body>
