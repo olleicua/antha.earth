@@ -3,6 +3,7 @@
 body {
   font-family: helvetica, arial, sans-serif;
   padding: 2em;
+  padding-bottom: 60px; /* offset for tail */
   background: #faf;
   color: #505;
 }
@@ -74,4 +75,15 @@ a, h1 {
 
 .back {
   font-size: 60px;
+}
+
+code {
+  background-color: #fcf;
+  border: 1px solid #909;
+  padding: 2px;
+}
+
+pre code {
+  display: block;
+  padding: 0.5em;
 }

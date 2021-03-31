@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/user-avatar/b18ce8cc-0829-46ba-83f6-0f6e8e520e3b-small.jpg" />
+
+    <title>smoke \ antha.earth</title>
+    
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+    
+    <!-- import the webpage's javascript file -->
+    <script src="smoke.js"></script>
+  </head>  
+  <body>
+
+    <div class="description">
+      <p>
+        <b>smoke.js</b><br />
+        i made a simple smoke library in javascript.<br />
+        you can <a href="https://raw.githubusercontent.com/olleicua/smoke2/master/lib/smoke.js" target="_blank">download it from github</a>
+        and use it make a customizable smoke effect on any website as simply as including the following:
+      </p>
+      
+      <pre><code>
+        &lt;script src="url/for/smoke.js"&gt;&lt;/script&gt;
+        &lt;script&gt;
+        new Smoke();
+        &lt;/script&gt;
+      </code></pre>
+      
+      <p>
+        here's what it looks like:  
+      </p>
+      
+      <div class="smokebox1" style="position: relative; width: 300px; height: 225px;"></div>
+      <script>
+        new Smoke({ parent: document.querySelector('.smokebox1'), y: 150 });
+      </script>
+      
+      <p>
+        by default it will appear in the center of the page or the center of a specified html element.<br />
+        you can make it appear in a particular position within an html element with code like this:
+      </p>
+      
+      <pre><code>
+        &lt;script&gt;
+        new Smoke({
+          parent: document.querySelector('.some-element-class-name'),
+          x: 100,
+          y: 100
+        });
+        &lt;/script&gt;
+      </code></pre>
+      
+      <p>
+        you can change the size and number of sprites (the circles that make up the smoke).<br />
+        the default sprite radious is 50 pixels and the default number of sprites is 16.
+      </p>
+      
+      <pre><code>
+        &lt;script src="url/for/smoke.js"&gt;&lt;/script&gt;
+        &lt;script&gt;
+        new Smoke({
+          spriteCount: 30,
+          spriteRadious: 25,
+        });
+        &lt;/script&gt;
+      </code></pre>
+      
+      <div class="smokebox2" style="position: relative; width: 300px; height: 250px;"></div>
+      <script>
+        new Smoke({
+          parent: document.querySelector('.smokebox2'),
+          y: 200,
+          spriteCount: 30,
+          spriteRadious: 25
+        });
+      </script>
+
+      <p>
+        you can also adjust the color.<br />
+        the simplest way to do so is by specifying the foreground property as an array of integers <code>[RED, GREEN, BLUE]</code>.
+        each integer should be between 0 and 255 and will determine how much red green or blue to add to the color.
+        for example, to make green smoke:
+      </p>
+      
+      <pre><code>
+        &lt;script src="url/for/smoke.js"&gt;&lt;/script&gt;
+        &lt;script&gt;
+        new Smoke({
+          foreground: [0, 255, 0]
+        });
+        &lt;/script&gt;
+      </code></pre>
+      
+      <div class="smokebox3" style="position: relative; width: 300px; height: 225px;"></div>
+      <script>
+        new Smoke({
+          parent: document.querySelector('.smokebox3'),
+          y: 150,
+          foreground: [0, 255, 0]
+        });
+      </script>
+
+      <p>
+        you can also get more complicated.<br />
+        the sprites are drawn using a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/radial-gradient()" target="_blank">css radial-gradient</a>.<br />
+        the foreground property determines the color at the center of each sprite and as we go from the center outwards to the circumference the color will fade first the midground color then to the background color.<br />
+        by default the midground and background properties will simply be the same as the foreground but with a lower alpha value (aka opacity).<br />
+        we can specify opacity as a fourth element of each array that is between 0 and 1 (default 1 for foreground, 0.6 for midground, 0 for background).<br />
+        you could for example make each sprite yellow in the center, green in a ring around then and then finally red (and we'll increase the opacity of the background so that we can see it):
+      </p>
+      
+      <pre><code>
+        &lt;script src="url/for/smoke.js"&gt;&lt;/script&gt;
+        &lt;script&gt;
+        new Smoke({
+          foreground: [255, 255, 0],
+          midground: [0, 255, 0],
+          background: [255, 0, 0, 0.3]
+        });
+        &lt;/script&gt;
+      </code></pre>
+      
+      <div class="smokebox4" style="position: relative; width: 300px; height: 225px;"></div>
+      <script>
+        new Smoke({
+          parent: document.querySelector('.smokebox4'),
+          y: 150,
+          foreground: [255, 255, 0],
+          midground: [0, 255, 0],
+          background: [255, 0, 0, 0.3]
+        });
+      </script>
+
+      <p>
+        you can also more simply modify the overall opacity of the smoke:
+      </p>
+      
+      <pre><code>
+        &lt;script src="url/for/smoke.js"&gt;&lt;/script&gt;
+        &lt;script&gt;
+        new Smoke({
+          foreground: [0, 255, 0],
+          opacity: 0.4
+        });
+        &lt;/script&gt;
+      </code></pre>
+      
+      <div class="smokebox5" style="position: relative; width: 300px; height: 225px;"></div>
+      <script>
+        new Smoke({
+          parent: document.querySelector('.smokebox5'),
+          y: 150,
+          foreground: [0, 255, 0],
+          opacity: 0.4
+        });
+      </script>
+      
+      <p>
+        you can make the smoke move at a different speed.
+        by default there is a 200 milisecond delay between animation frames.
+      </p>
+      
+      <pre><code>
+        &lt;script src="url/for/smoke.js"&gt;&lt;/script&gt;
+        &lt;script&gt;
+        new Smoke({
+          foreground: [0, 144, 255],
+          animationMiliseconds: 1000
+        });
+        &lt;/script&gt;
+      </code></pre>
+      
+      <div class="smokebox6" style="position: relative; width: 300px; height: 225px;"></div>
+      <script>
+        new Smoke({
+          parent: document.querySelector('.smokebox6'),
+          y: 150,
+          foreground: [0, 144, 255],
+          animationMiliseconds: 1000
+        });
+      </script>
+
+      <p>
+        you can even customize the way that the smoke moves and fades.<br />
+        you do this by defining the functions that determine how each sprite's x and y coordinates, radious, and opacity changes each frame.<br />
+        below for reference are the relevant options with their default functions.<br />
+        <code>smoke.random</code> takes a minimum value and a maximum value and returns a randome number in between the two.
+      </p>
+      
+      <pre><code>
+        &lt;script src="url/for/smoke.js"&gt;&lt;/script&gt;
+        &lt;script&gt;
+        new Smoke({
+          deltaRadious: (smoke) => {
+            return - smoke.options.spriteRadious / smoke.options.spriteCount;
+          },
+          deltaY: (smoke, sprite) => {
+            return (sprite.y - smoke.y > 5) ? -10 : smoke.random(-25, 10);
+          },
+          deltaX: (smoke, sprite) => {
+            return smoke.random(-20, 15);
+          },
+          deltaOpacity: (smoke) => {
+            return - 1 / smoke.options.spriteCount;
+          }
+        });
+        &lt;/script&gt;
+      </code></pre>
+
+      <p>
+        you could also change things up as follows:<br />
+        have the radious decrease half as slowly so they stay bigger longer<br />
+        have each sprite rise at a constant rate of 10 pixels per frame<br />
+        have each sprite move to the right a random number of pixels between 0 and 10<br />
+        keep the opacity at 1 for each sprite until it disappears
+      </p>
+      
+      <pre><code>
+        &lt;script src="url/for/smoke.js"&gt;&lt;/script&gt;
+        &lt;script&gt;
+        new Smoke({
+          deltaRadious: (smoke) => {
+            return - 0.5 * smoke.options.spriteRadious / smoke.options.spriteCount;
+          },
+          deltaY: () => {
+            return -10;
+          },
+          deltaX: (smoke, sprite) => {
+            return smoke.random(0, 10);
+          },
+          deltaOpacity: (smoke) => {
+            return 0;
+          }
+        });
+        &lt;/script&gt;
+      </code></pre>
+
+      <div class="smokebox7" style="position: relative; width: 300px; height: 225px;"></div>
+      <script>
+        new Smoke({
+          parent: document.querySelector('.smokebox7'),
+          y: 150,
+          foreground: [255, 100, 0],
+          midground: [100, 100, 100],
+          deltaRadious: (smoke) => {
+            return - 0.5 * smoke.options.spriteRadious / smoke.options.spriteCount;
+          },
+          deltaY: () => {
+            return -10;
+          },
+          deltaX: (smoke, sprite) => {
+            return smoke.random(0, 10);
+          },
+          deltaOpacity: (smoke) => {
+            return 0;
+          }
+        });
+      </script>
+
+      <p class="back">
+        <a href="/">back</a>
+      </p>
+    </div>
+
+    <!-- include the Glitch button to show what the webpage is about and
+          to make it easier for folks to view source and remix -->
+    <div class="tail" style="z-index: 100;"">
+      you are looking at: <a href="http://glitch.com">glitch</a> / <a href="/">antha's personal page</a> / smoke
+      <div class="glitchButton" style="position:absolute;top:10px;right:20px;"></div>
+      <script src="/glitch-button.js" defer></script>
+
+    </div>
+  </body>
+</html>
