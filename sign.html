@@ -1,0 +1,66 @@
+<html>
+  <head>
+    <style>
+      .sign {
+        margin: 2rem auto;
+        width: 240px;
+        height: 240px;
+        background-color: blue;
+        color: white;
+        font-family: sans-serif;
+        font-size: 40px;
+        text-align: center;
+        padding: 15px 0 0 0;
+        box-sizing: border-box;
+        line-height: 50px;
+        border-radius: 20px
+      }
+      
+      .sign img {
+        height: 65px;
+        position: relative;
+        top: -3px;
+      }
+      
+      .arrow {
+        height: 25px;
+        width: 24px;
+        background-color: white;
+        margin: 20px auto 6px;
+        position: relative;
+      }
+      
+      .arrow::before {
+        content: '';
+        height: 0;
+        width: 0;
+        position: absolute;
+        left: -13px;
+        top: -22px;
+        border-top: none;
+        border-left: 25px solid transparent;
+        border-right: 25px solid transparent;
+        border-bottom: 22px solid white;
+      }
+      
+      .right {
+        transform: rotate(0.25turn);
+        margin: 12px auto 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sign">
+      <div class="up arrow"></div>
+      Natural<br />
+      Food Store<br />
+      <img src="https://cdn.glitch.global/08da0bf4-42da-4bae-81e9-1e5582b14462/bird(1).png?v=1685041704753" />
+    </div>
+    <div class="sign">
+      <div class="right arrow"></div>
+      Natural<br />
+      Food Store<br />
+      <img src="https://cdn.glitch.global/08da0bf4-42da-4bae-81e9-1e5582b14462/bird(1).png?v=1685041704753" />
+    </div>
+  </body>
+</html>

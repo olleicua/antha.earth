@@ -4,13 +4,25 @@ body {
   font-family: helvetica, arial, sans-serif;
   padding: 2em;
   padding-bottom: 60px; /* offset for tail */
-  background: #faf;
-  color: #505;
+  background: #fbf;
+  color: #404;
 }
 
 a, h1 {
   font-style: italic;
   color: #090;
+}
+
+.dark-purple-box {
+  background: #404;
+  color: #fbf
+}
+
+#mushroom {
+  width: 150px;
+  height: 150px;
+  background: #000;
+  margin: 50px auto 0;
 }
 
 .tail {
@@ -19,8 +31,8 @@ a, h1 {
   bottom: 0;
   height: 60px;
   width: 100%;
-  background: #505;
-  color: #faf;
+  background: #404;
+  color: #fbf;
   box-sizing: border-box;
   padding: 10px;
   padding-right: 5em;
@@ -55,18 +67,53 @@ a, h1 {
 } 
 
 .graffiti {
-  width: 90%;
-  padding: 0.5em;
   text-align: center;
   box-sizing: border-box;
 }
 
-.graffiti img {
-  width: 100%;
+.graffiti p.label {
+  font-size: 36px;
+  margin: 0px;
+  padding: 5px 0.5em;
+  position: sticky;
+  top: 0;
+  left: 25px;
 }
 
-.grafiti .caption {
+.graffiti img {
+  width: 90%;
+  margin: 0.8em auto 0;
+}
+
+.by-antha, .found-in-central-sq, .by-ari, .collaboration {
+  width: 100%;
+  padding: 0.5em;
+  position: relative;
+  padding-top: 60px;
+  margin: 15px;
+}
+
+.by-antha p.label {
+  background: #fbf;
+}
+
+.found-in-central-sq, .found-in-central-sq p.label {
+  background: #4ea;
+}
+.by-ari, .by-ari p.label {
+  background: #ed6;
+}
+
+.collaboration, .collaboration p.label {
+  background: #8af;
+}
+
+.graffiti .caption {
   font-size: 18px;
+  color: #321;
+  text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
 .brunch-menu p {
@@ -74,7 +121,8 @@ a, h1 {
 }
 
 .back {
-  font-size: 60px;
+  font-size: 20px;
+  text-align: center;
 }
 
 code {
@@ -87,3 +135,67 @@ pre code {
   display: block;
   padding: 0.5em;
 }
+
+.emotable-content-unit {
+  text-align: center;
+  padding-top: 0.5em;
+  margin-bottom: 1em;
+}
+
+.emotable-content-unit emoji-picker {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.music .emotable-content-unit {
+  text-align: left;
+}
+
+.music .emotable-content-unit emoji-picker {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.emotable-content-unit :is(.emote, .add-emote, .delete-emote) {
+  text-align: center;
+  border: 1px solid #262;
+  border-radius: 50%;
+}
+
+.emotable-content-unit .emote {
+  cursor: default;
+  height: 25px;
+  width: 25px;
+  margin: 0 1em;
+  font-size: 20px;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+}
+
+.emotable-content-unit .add-emote {
+  cursor: pointer;
+  height: 25px;
+  width: 25px;
+  margin: 0 1em;
+  font-size: 25px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.emotable-content-unit .delete-emote {
+  cursor: pointer;
+  height: 10px;
+  width: 10px;
+  font-size: 10px;
+  display: none;
+  position: absolute;
+  bottom: -7px;
+  right: -8px;
+}
+
+.emotable-content-unit .emote:focus .delete-emote,
+.emotable-content-unit .emote:hover .delete-emote {
+  display: block;
+}
+

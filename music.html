@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="music by antha hosted at antha.earth" />
+    <meta property="og:type" content="music" />
     <link rel="icon" href="https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/user-avatar/b18ce8cc-0829-46ba-83f6-0f6e8e520e3b-small.jpg" />
 
     <title>music \ antha.earth</title>
@@ -12,57 +14,138 @@
     <link rel="stylesheet" href="/style.css">
     
     <!-- import the webpage's javascript file -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js" integrity="sha256-5oApc/wMda1ntIEK4qoWJ4YItnV4fBHMwywunj8gPqc=" crossorigin="anonymous"></script>
+    <script>
+      window.Music = {};
+      Music.tracks = {
+        adventureDance: {
+          name: 'adventure dance',
+          description: ['some original experimental dance music by antha'],
+          src: 'https://cdn.glitch.me/08da0bf4-42da-4bae-81e9-1e5582b14462%2Fadventure_dance_arranged.wav?v=1637302536452'
+        },
+        adventureDanceLoop: {
+          name: 'adventure dance as a loop:',
+          description: [],
+          loop: true,
+          src: 'https://cdn.glitch.me/08da0bf4-42da-4bae-81e9-1e5582b14462%2Fadventure_dance.wav?v=1637302460667'
+        },
+        allstar: {
+          name: 'Allstar demo',
+          description: ['by <a href="https://en.wikipedia.org/wiki/Smash_Mouth" target="_blank" >Smash Mouth</a>',
+                        'MIDI loop by antha'],
+          loop: true,
+          src: 'https://cdn.glitch.me/08da0bf4-42da-4bae-81e9-1e5582b14462%2Fallstar_demo.wav?v=1637302783039'
+        },
+        untitledDAW: {
+          name: 'untitled DAW tune',
+          description: ['antha having fun with a digital audio workstation'],
+          src: 'https://cdn.glitch.me/08da0bf4-42da-4bae-81e9-1e5582b14462%2F08da0bf4-42da-4bae-81e9-1e5582b14462_untitled_daw_tune.wav?v=1637302879785'
+        },
+        thunderclouds: {
+          name: 'Thunderclouds demo',
+          description: ['by <a target="_blank" href="https://en.wikipedia.org/wiki/LSD_(group)">LSD</a>',
+                        'MIDI cover by antha'],
+          src: 'https://cdn.glitch.me/08da0bf4-42da-4bae-81e9-1e5582b14462%2F08da0bf4-42da-4bae-81e9-1e5582b14462_Thuderclouds%20Demo.wav?v=1637302944903'
+        },
+        fast_car: {
+          name: 'Fast Car',
+          description: ['by <a target="_blank" href="https://en.wikipedia.org/wiki/Tracy_Chapman">Tracy Chapman</a>',
+                        'MIDI loop cover by antha'],
+          loop: true,
+          src: 'https://cdn.glitch.me/08da0bf4-42da-4bae-81e9-1e5582b14462%2Ffast%20car.wav?v=1637361800109'
+        },
+        come_sail_away_lmms: {
+          name: 'Come Sail Away',
+          description: ['by <a href="https://en.wikipedia.org/wiki/Styx_(band)" target="_blank" >Styx</a>',
+                        'MIDI cover made in <a href="https://lmms.io/" target="_blank">LMMS</a> by antha'],
+          src: 'https://cdn.glitch.global/08da0bf4-42da-4bae-81e9-1e5582b14462/come%20sail%20away.wav?v=1648705028350'
+        },
+        sixty_four_bandlab: {
+          name: 'sixty-four',
+          description: ['original track by antha',
+                        'made using BandLab on my android phone',
+                        'rhythm inspired by binary numbers'],
+          src: 'https://cdn.glitch.global/08da0bf4-42da-4bae-81e9-1e5582b14462/antha%20-%20sixty-four%202022-05-27%2000_03%20(1).wav?v=1653624388674'
+        },
+        full_disclosure: {
+          name: 'Full Disclosure',
+          description: ['by <a href="https://en.wikipedia.org/wiki/Zach_Callison">Zach Callison</a> ' +
+                        'as <a href="https://en.wikipedia.org/wiki/Steven_Universe">Steven Universe</a>',
+                        'MIDI loop by antha'],
+          loop: true,
+          src: 'https://cdn.glitch.global/08da0bf4-42da-4bae-81e9-1e5582b14462/full_disclosure_full_orchestra.wav?v=1668190555193'
+        },
+        everything_stays: {
+          name: 'Everything Stays',
+          description: ['by <a href="https://en.wikipedia.org/wiki/Rebecca_Sugar">Rebecca Sugar</a>',
+                        'MIDI loop by antha'],
+          loop: true,
+          src: 'https://cdn.glitch.global/08da0bf4-42da-4bae-81e9-1e5582b14462/Everything%20Stays.wav?v=1687839102729'
+        }
+        
+      };
+      Music.breadcrumb = '/ music';
+      Music.displayTracks = Music.tracks;
+
+      (() => {
+        let id = location.hash.replace(/^#/, '');
+        let track = Music.tracks[id];
+        Music.track = track;
+        if (track) {
+          Music.breadcrumb = '/ <a href="/music.html">music</a> / ' + track.name;
+          Music.displayTracks = {};
+          Music.displayTracks[id] = track;
+        }
+        window.addEventListener('hashchange', () => { location.reload() });
+      })();
+  </script>
   </head>  
   <body>
-
     <div class="music">
-      <p>
-        <b>Allstar Demo</b><br />
-        by <a href="https://en.wikipedia.org/wiki/Smash_Mouth">Smash Mouth</a><br />
-        MIDI loop by antha
-      </p>
-      <audio
-       controls
-       loop
-       src="https://cdn.glitch.com/08da0bf4-42da-4bae-81e9-1e5582b14462%2Fallstar_demo.wav?v=1614044804297">
-            Your browser does not support the
-            <code>audio</code> element.
-      </audio>
-       <p>
-        <b>Untitled DAW Tune</b><br />
-        antha having fun with a digital audio workstation
-      </p>
-      <audio
-       controls
-       src="https://cdn.glitch.com/08da0bf4-42da-4bae-81e9-1e5582b14462%2Funtitled_daw_tune.wav?v=1608703145964">
-            Your browser does not support the
-            <code>audio</code> element.
-      </audio>
-      <p>
-        <b>Thunderclouds Demo</b><br />
-        by <a target="_blank" href="https://en.wikipedia.org/wiki/LSD_(group)">LSD</a><br />
-        MIDI cover by antha
-      </p>
-      <audio
-       controls
-       src="https://cdn.glitch.com/08da0bf4-42da-4bae-81e9-1e5582b14462%2FThuderclouds%20Demo.wav?v=1605821698225">
-            Your browser does not support the
-            <code>audio</code> element.
-      </audio>
+      <script>
+        for (id in Music.displayTracks) {
+          let track = Music.displayTracks[id];
+          document.write('<p class="track" data-track-id="' + id + '">');
+          if (!Music.track) document.write('<b><a href="#' + id + '">' + track.name + '</a></b>');
+          else document.write('<b>' + track.name + '</b>');
+          for (let i = 0; i < track.description.length; i++) document.write('<br />' + track.description[i]);
+          document.write('<br />');
+          document.write('<audio rel="noreferrer" crossorigin controls' + (track.loop ? ' loop' : '') + ' src="' + track.src + '&domain=' + location.host + '">Your browser does not support the <code>audio</code> element</audio>');
+          document.write('</p>');
+        }
+        
+        if (!navigator.userAgent.match(/firefox/i)) document.write('<p>(this page is best viewed in <a href="https://www.mozilla.org/en-US/firefox/new/" target="_blank">Firefox</a>)</p>');
+      </script>
+      <script type="module">
+        import { makeEmotableContentUnit, loadEmotes } from '/emotable-content.js';
+        loadEmotes(() => {
+          const tracks = document.querySelectorAll('.track');
+          tracks.forEach(function(track) {
+            let slug = track.getAttribute('data-track-id');
+            let contentUnit = makeEmotableContentUnit(slug);
+            track.after(contentUnit);
+          });
+        });
+      </script>
+
      
       <p class="back">
-        <a href="/">back</a>
+        <script>
+          if (!Music.track) document.write('<a href="/">back</a>');
+          else document.write('<a href="#">back</a>');      
+        </script>
       </p>
     </div>
 
     <!-- include the Glitch button to show what the webpage is about and
           to make it easier for folks to view source and remix -->
     <div class="tail">
-      you are looking at: <a href="http://glitch.com">glitch</a> / <a href="/">antha's personal page</a> / music
+      you are looking at: <a href="http://glitch.com">glitch</a> / <a href="/">antha's personal page</a>
+      <script> document.write(Music.breadcrumb); </script>
       <div class="glitchButton" style="position:absolute;top:10px;right:20px;"></div>
       <script src="/glitch-button.js" defer></script>
 
     </div>
+    <script src="anthalytics.js"></script>
+    <script>Anthalytics.logPageView();</script>
   </body>
 </html>

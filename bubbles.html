@@ -1,0 +1,91 @@
+<html>
+  <head>
+    <title>🫧</title>
+    <style>
+      html, body {
+        padding: 0;
+        margin: 0;
+      }
+      
+      .controls {
+        display: flex;
+        margin: 0 auto;
+        z-index: 10;
+        width: min-content;
+        text-align: center;
+        mix-blend-mode: normal;
+        position: relative;
+      }
+
+      .bubbles {
+        position: fixed;
+        inset: 0;
+        background-blend-mode: lighten;
+        z-index: 2;
+      }
+      
+      img {
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 5;        
+        height: 100%;
+        width: 100%;
+      }
+      
+      img.water, img.earth {
+        mix-blend-mode: color-dodge;
+      }
+
+      img.air {
+        mix-blend-mode: color-dodge;
+      }
+
+      img.fire {
+        mix-blend-mode: color-burn;
+      }
+    </style>
+    <script>
+      function randomFromRange(min, max) {
+        return min + (Math.random() * (max - min));
+      }
+    </script>
+  </head>
+  <body>
+    <div class="controls">
+      <select>
+        <option value="" selected></option>
+        <!--<option value="earth">🪨</option>-->
+        <option value="water">🌊</option>
+        <!--<option value="air">💨</option>-->
+        <option value="fire">🔥</option>
+      </select>
+    </div>
+    <div class="bubbles"></div>
+    <img src="https://cdn.glitch.global/08da0bf4-42da-4bae-81e9-1e5582b14462/water.webp?v=1681477369109" class="water" />
+    <!--<img src="https://2.bp.blogspot.com/-9gaRld60_Bo/T4skUg7IaRI/AAAAAAAABOY/m-Ejz7Jnn_s/s1600/dirt.jpg" class="earth" />-->
+    <!--<img src="http://weknowyourdreams.com/images/wind/wind-05.jpg" class="air" />-->
+    <img src="https://cdn.glitch.global/08da0bf4-42da-4bae-81e9-1e5582b14462/fire.jpg?v=1681477443406" class="fire" />
+    <script>
+      const $bubbles = document.querySelector('.bubbles');
+      const gradients = [];
+      const count = randomFromRange(28, 32);
+      for (let i = 0; i < count; i++) {
+        let radius = randomFromRange(9, 15);
+        let x = randomFromRange(16, 84);
+        let y = randomFromRange(16, 84);
+        gradients.push(`radial-gradient(circle ${radius}vmin at ${x}% ${y}%, #fff, #000)`);
+      }
+      $bubbles.style.background = gradients.join(',');
+      
+      const $images = document.querySelectorAll('img');
+      const $dropdown = document.querySelector('select');
+      $dropdown.addEventListener('change', (event) => {
+        const element = event.target.value;
+        for (let i = 0; i < $images.length; i++) {
+          $images[i].style.display = $images[i].classList.contains(element) ? 'block' : 'none';  
+        }
+      });
+    </script>
+  </body>
+</html>

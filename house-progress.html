@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="house progress / antha.earth" />
+    <meta property="og:description" content="antha is building a house" />
+    <meta property="og:image" content="https://cdn.glitch.global/08da0bf4-42da-4bae-81e9-1e5582b14462/warren.jpg?v=1687840598513" />
+    <link rel="icon" href="https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/user-avatar/b18ce8cc-0829-46ba-83f6-0f6e8e520e3b-small.jpg" />
+
+    <title>house / antha.earth</title>
+    
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+    
+    <style>
+      .gallery {
+        width: 97%;
+        max-width: 750px;
+      }
+      
+      .gallery .hero {
+        width: 100%;
+        margin-bottom: 15px;
+      }
+      
+      .gallery .thumbnails {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px 3%;
+        justify-content: center;
+      }
+
+      .gallery .thumbnails img {
+        box-sizing: border-box;
+        width: 22%;
+      }
+
+      .gallery .thumbnails img.selected {
+        border: 3px solid #84f;
+      }
+      
+      .yt-video {
+        width: 97%;
+        max-width: 750px;
+        aspect-ratio: 16 / 9;
+      }
+    </style>
+    
+    <script>
+      const handleGalleryEvent = (event) => {
+        const $gallery = event.target.parentElement.parentElement;
+        const $hero = $gallery.querySelector('.hero');
+        $hero.src = event.target.src;
+        const $selected = $gallery.querySelector('.thumbnails img.selected');
+        $selected.classList.remove('selected');
+        event.target.classList.add('selected');
+      }
+      
+      const Gallery = (srcs) => {
+        if (srcs.length < 1) return;
+
+        const $gallery = document.createElement('div');
+        $gallery.classList.add('gallery');
+        document.currentScript.after($gallery);
+        const $hero = document.createElement('img');
+        $hero.classList.add('hero');
+        $hero.src = srcs[0];
+        $gallery.append($hero);
+        const $thumbnails = document.createElement('div');
+        $thumbnails.classList.add('thumbnails');
+        $gallery.append($thumbnails);
+        for (let i = 0; i < srcs.length; i++) {
+          const $thumb = document.createElement('img');
+          if (i === 0) $thumb.classList.add('selected');
+          $thumb.src = srcs[i];
+          $thumb.addEventListener('click', handleGalleryEvent);
+          $thumb.addEventListener('mouseover', handleGalleryEvent);
+          $thumb.addEventListener('touchstart', handleGalleryEvent);
+          $thumbnails.append($thumb);
+        }
+      };
+    </script>
+  </head>  
+  <body>
+    <h3>
+      i'm building a house in maine
+    </h3>
+    <p>
+      this is what it will look like someday:
+    </p>
+    <img src="https://cdn.glitch.global/08da0bf4-42da-4bae-81e9-1e5582b14462/warren.jpg?v=1687840598513" style="width: 95%; max-width: 750px;" />
+    <p>
+      in the summer of 2022 we dug a big hole:  
+    </p>
+    <iframe class="yt-video" src="https://www.youtube.com/embed/laMocztep1s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <p>    
+      then we made the walls of the basement using
+      <a href="https://en.wikipedia.org/wiki/Insulating_concrete_form" target="_blank">insulated concrete forms</a>:
+    </p>
+    <script>
+      Gallery([
+        'https://i.postimg.cc/CKVVm3Hd/PXL-20221023-152744761-MP.jpg',
+        'https://i.postimg.cc/PJ7gZ95X/PXL-20221023-152755503-MP.jpg',
+        'https://i.postimg.cc/FKv2jjNL/PXL-20221023-152808756-MP.jpg',
+        'https://i.postimg.cc/VLxykxh4/PXL-20221023-152812172-MP.jpg',
+        'https://i.postimg.cc/NfrVSN0X/PXL-20221023-152821298-MP.jpg',
+        'https://i.postimg.cc/pyN0PHdF/PXL-20221023-152829906-MP.jpg'
+      ]);
+    </script>
+    <p>
+      in the spring and early summer of 2023 we poured the basement floor and started framing the sills, rims, and beams of the first floor:
+    </p>
+    <script>
+      Gallery([
+        'https://i.postimg.cc/rsNY8pDt/PXL-20230730-190232693-MP.jpg',
+        'https://i.postimg.cc/X7nzs9PK/PXL-20230730-190237596-MP.jpg',
+        'https://i.postimg.cc/sgNHfqgK/PXL-20230730-190257756-MP.jpg',
+        'https://i.postimg.cc/Gm2SCddH/PXL-20230730-190300376-MP.jpg'
+      ]);
+    </script>
+    <p>
+      in august of 2023 we finished the subfloor:
+    </p>
+    <script>
+      Gallery([
+        'https://i.postimg.cc/dVFYBM93/PXL-20230806-232142540-MP.jpg',
+        'https://i.postimg.cc/5t7WbXWQ/PXL-20230806-232145616-MP.jpg',
+        'https://i.postimg.cc/76586qqs/PXL-20230807-154410210-MP.jpg',
+        'https://i.postimg.cc/ZRXkvXRT/PXL-20230807-154414608-MP.jpg'
+      ]);
+    </script>
+    <p>
+      with a tarp on top to protect from the rain it looks has a nice glowy blue thing going on inside:
+    </p>
+    <script>
+      Gallery([
+        'https://cdn.glitch.global/08da0bf4-42da-4bae-81e9-1e5582b14462/PXL_20230807_223130819.MP.jpg?v=1691447982086',
+        'https://cdn.glitch.global/08da0bf4-42da-4bae-81e9-1e5582b14462/PXL_20230807_223217404.MP.jpg?v=1691447907713',
+        'https://cdn.glitch.global/08da0bf4-42da-4bae-81e9-1e5582b14462/PXL_20230807_223205341.MP.jpg?v=1691447961374'
+      ]);
+    </script>
+
+    <div class="bottom-space"></div>
+    
+    <!-- include the Glitch button to show what the webpage is about and
+          to make it easier for folks to view source and remix -->
+    <div class="tail">
+      you are looking at: <a href="http://glitch.com">glitch</a> / <a href="/">antha's personal page</a> / house progress
+      <div class="glitchButton" style="position:absolute;top:10px;right:20px;"></div>
+      <script src="/glitch-button.js" defer></script>
+
+    </div>
+
+    <script src="anthalytics.js"></script>
+    <script>Anthalytics.logPageView();</script>
+
+  </body>
+</html>

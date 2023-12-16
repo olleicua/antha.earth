@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      body {
+        background: #a8bb73;
+        color: #324608;
+        font-size: 100vh;
+        text-align: center;
+      }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js" integrity="sha256-5oApc/wMda1ntIEK4qoWJ4YItnV4fBHMwywunj8gPqc=" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <span id="countdown">20:00</span>
+    <script>
+      let startTime, endTime;
+      
+      const countdownElement = document.getElementById('countdown');
+      
+      function displayTimer() {
+        var duration = moment.duration(endTime.diff(moment()));
+        
+        if (duration.seconds() > 0 || duration.minutes() > 0) {
+          let minutes = duration.minutes();
+          if (minutes < 10) minutes = `0${minutes}`;
+          let seconds = duration.seconds();
+          if (seconds < 10) seconds = `0${seconds}`;
+          const timer = `${minutes}:${seconds}`;
+
+          countdownElement.textContent = timer;
+
+          setTimeout(displayTimer, 200);
+        } else {
+          countdownElement.textContent = 'Time is up!';
+        }
+      }
+      setTimeout(() => {
+        startTime = moment();
+        endTime = startTime.add(
+          moment.duration(20, 'minutes')
+        );
+        displayTimer();
+      }, 1000);
+    </script>
+  </body>
+</html>

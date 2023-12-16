@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="minimalist haggadah by antha" />
     <link rel="icon" href="https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/user-avatar/b18ce8cc-0829-46ba-83f6-0f6e8e520e3b-small.jpg" />
 
     <title>haggadah / antha.earth</title>
@@ -14,7 +15,14 @@
     <style>
       .en, .trl, .he {
         display: inline-block;
-        width: 30%;
+        width: 32%;
+        overflow-wrap: break-word;
+        background: #fdf;
+        padding: 3px;
+        border-radius: 3px;
+        margin: 3px 0;
+        box-sizing: border-box;
+        vertical-align: middle;
       }
       .en {
         text-align: left;
@@ -25,6 +33,24 @@
       }
       .he {
         text-align: right;
+      }
+      
+      .bottom-space {
+        height: 150px;
+      }
+      
+      li {
+        margin-top: 1em;
+      }
+      
+      h2 {
+        font-size: 1.2em;
+      }
+      
+      body {
+        padding: 0.5em;
+        margin: 0 auto;
+        max-width: 900px;
       }
     </style>
     
@@ -178,7 +204,114 @@
       moses came to free them<br />
       the pharoh refused<br />
       god made plagues<br/>
-      <i>(pour the second glass of wine and count the ten plagues while putting ten drops of wine on your plate)</i><br />
+    </p>
+    
+    <p>
+      pour the second glass of wine and count the ten plagues while putting ten drops of wine on your plate:<br />
+      <i>
+        <span class="en">
+          blood
+        </span>
+        <span class="trl">
+          dam
+        </span>
+        <span class="he">
+          דָם
+        </span>
+        <br />
+        <span class="en">
+          frogs
+        </span>
+        <span class="trl">
+          tzfardeiya
+        </span>
+        <span class="he">
+          צְפַרְדֵעַ
+        </span>
+        <br />
+        <span class="en">
+          lice
+        </span>
+        <span class="trl">
+          kinim
+        </span>
+        <span class="he">
+          כִּנִים
+        </span>
+        <br />
+        <span class="en">
+          animals
+        </span>
+        <span class="trl">
+          arov
+        </span>
+        <span class="he">
+          עָרוֹב
+        </span>
+        <br />
+        <span class="en">
+          pestilence
+        </span>
+        <span class="trl">
+          dever
+        </span>
+        <span class="he">
+          דֶבֶר
+        </span>
+        <br />
+        <span class="en">
+          boils
+        </span>
+        <span class="trl">
+          shechin
+        </span>
+        <span class="he">
+          שְׁחִין
+        </span>
+        <br />
+        <span class="en">
+          hail
+        </span>
+        <span class="trl">
+          barad
+        </span>
+        <span class="he">
+          בָּרָד
+        </span>
+        <br />
+        <span class="en">
+          locusts
+        </span>
+        <span class="trl">
+          arbeh
+        </span>
+        <span class="he">
+          אַרְבֶה
+        </span>
+        <br />
+        <span class="en">
+          darkness
+        </span>
+        <span class="trl">
+          hoshech
+        </span>
+        <span class="he">
+          חוֹשֶׁך
+        </span>
+        <br />
+        <span class="en">
+          death of the first-born
+        </span>
+        <span class="trl">
+          makkot bechorot
+        </span>
+        <span class="he">
+          מַכַת בְכוֹרוֹת
+        </span>
+        <br />
+      </i>
+    </p>
+    <p>    
       they fled to the dessert where they wandered for 40 years<br />
       stuff happened<br />
       they got to jerusalem
@@ -270,6 +403,10 @@
       pour the third glass of wine and say blessings after the meal
     </p>
     
+    <p>
+      at this time the door is opened to allow Elijah the prophet to enter and drink wine
+    </p>
+    
     <h2>
       <span class="en">praise</span>
       <span class="trl">halel</span>
@@ -290,6 +427,7 @@
       sing more songs
     </p>
     
+    <div class="bottom-space"></div>
     
 
     <!-- include the Glitch button to show what the webpage is about and
@@ -300,5 +438,9 @@
       <script src="/glitch-button.js" defer></script>
 
     </div>
+
+    <script src="anthalytics.js"></script>
+    <script>Anthalytics.logPageView();</script>
+
   </body>
 </html>
