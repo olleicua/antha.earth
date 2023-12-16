@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="antha.earth" />
+    <meta property="og:description" content="antha's personal website and glitch profile" />
+    <link rel="icon" href="https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/user-avatar/b18ce8cc-0829-46ba-83f6-0f6e8e520e3b-small.jpg" />
+
+    <title>unique snowflakes \ antha.earth</title>
+    
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/feel-free-font.css">
+    <style>
+      :root {
+        --outer-margin: 15vmin;
+        --box-width: calc(2 * (50vmin - var(--outer-margin)));
+        --box-height: calc(1.18 * var(--box-width));
+      }
+      
+      html, body {
+        background: #694dff;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+      }
+      
+      .snowflake {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: calc(50vh - (var(--box-height) / 2));
+        height: var(--box-height);
+        width: var(--box-width);
+        position: relative;
+        font-family: feelfree;
+        font-size: 11vmin;
+        color: #ffffff;
+      }
+      
+      .snowflake .arm {
+        position: absolute;
+        right: 50%;
+        top: 50%;
+        line-height: 0.6;
+        padding-right: 2rem;
+        transform-origin: top right;
+      }
+      
+      .instructions {
+        position: fixed;
+        top: 0.5rem;
+        width: 100vw;
+        text-align: center;
+        color: #ffffff;
+      }
+      
+      .instructions i {
+        font-size: 60%;
+      }
+      
+      .mobile-input {
+        position: fixed;
+        bottom: -1000px;
+      }
+      .mobile-help-text {
+        display: none;
+      }
+    </style>
+        
+    <!-- import the webpage's javascript file -->
+  </head>  
+  <body>
+    <section class="instructions">
+      type some text to make your own unique snowflake
+      <br />
+      <span class="mobile-help-text">
+        (tap screen to activate virtual keyboard)
+        <br />
+      </span>
+      <i>(font by <a href="https://billyargel.com/">Billy Argel Fonts</a> not for comercial use)</i>
+      
+    </section>
+    <section class="snowflake"></section>
+    <input type="text" class="mobile-input">
+    <script src="unique-snowflake.js"></script>
+
+    <!-- include the Glitch button to show what the webpage is about and
+          to make it easier for folks to view source and remix -->
+    <div class="tail">
+      you are looking at: <a href="http://glitch.com">glitch</a> / <a href="/">antha's personal page</a> / unique snowflakes
+      <div class="glitchButton" style="position:absolute;top:10px;right:20px;"></div>
+      <script src="/glitch-button.js" defer></script>
+    </div>
+
+    <script src="anthalytics.js"></script>
+    <script>Anthalytics.logPageView();</script>
+  </body>
+</html>

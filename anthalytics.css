@@ -1,0 +1,104 @@
+
+#anthalytics details {
+  border: 2px dotted #262;
+  margin: 0.5rem;
+  padding: 0;
+}
+
+#anthalytics summary {
+  padding: 0.5rem;
+  cursor: pointer;
+  background: #d9f;
+  display: grid;
+  grid-template-columns: [label] auto [inclusive] 16vw [exclusive] 16vw [count] 14vw [end];
+  grid-template-rows: [row] auto;
+  justify-items: stretch;
+}
+
+#anthalytics details[open] > summary {
+  border-bottom: 2px dotted #262;
+  margin-bottom: 0.5rem;
+}
+
+#anthalytics .count {
+  grid-column: count;
+  grid-row: row;
+  text-align: right;
+}
+
+#anthalytics .search-count {
+  grid-row: row;
+  text-align: right;
+  font-style: italic;
+  border-right: 2px dotted #226622;
+  margin-right: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+#anthalytics .search-count.in {
+  grid-column: inclusive;
+}
+
+#anthalytics .search-count.ex {
+  grid-column: exclusive;
+}
+
+#anthalytics .label {
+  grid-column: label;
+  grid-row: row;
+  text-align: left;
+}
+
+#anthalytics .view {
+  border: 2px dotted #262;
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
+#anthalytics .time {
+  float: right;
+}
+
+#anthalytics .url {
+  display: block;
+}
+
+#anthalytics .user-agent {
+  display: block;
+  font-size: 10pt;
+  color: #737;
+  font-style: italic;
+}
+
+.tab {
+  display: inline-block;
+  cursor: pointer;
+  padding: 0.5rem;
+  margin: 0 0.5rem;
+  border: 2px dotted #262;
+  border-bottom: none;
+  border-radius: 5px 5px 0 0;
+  position: relative;
+}
+
+.tab.active::after {
+  content: ' ';
+  width: 100%;
+  height: 0;
+  border-bottom: 6px solid #fbf;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+}
+
+.tab-page {
+  border: 2px dotted #262;
+  margin: 0.5rem;
+  margin-top: 0;
+  padding: 0.5rem;
+  display: none;
+}
+
+.tab-page.active {
+  display: block;
+}

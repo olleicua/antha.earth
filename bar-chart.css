@@ -1,0 +1,40 @@
+.bar-chart {
+  display: grid;
+  grid-template-rows: 1fr 1fr min-content
+}
+
+.bar-chart .label-max-y, .bar-chart .label-half-y  {
+  border-top: 1px solid #404;
+  border-right: 1px solid #404;
+}
+
+.bar-chart .label-x {
+  border-top: 1px solid #404;
+  border-left: 1px solid #404;
+}
+
+.bar-chart .label-max-y {
+  grid-area: y-axis-label-max;
+}
+
+.bar-chart .label-half-y {
+  grid-area: y-axis-label-half;
+}
+
+.bar-chart .bar {
+  position: relative;
+}
+
+.bar-chart .plot {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #404;
+  color: #fbf;
+  text-align: center;
+}
+
+.bar-chart .plot.even {
+  background: #606;
+}

@@ -4,12 +4,15 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="antha.earth" />
+    <meta property="og:description" content="antha's personal website and glitch profile" />
     <link rel="icon" href="https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/user-avatar/b18ce8cc-0829-46ba-83f6-0f6e8e520e3b-small.jpg" />
 
     <title>antha.earth</title>
     
     <!-- import the webpage's stylesheet -->
     <link rel="stylesheet" href="/style.css">
+    <!-- <link rel="me" href="https://social.coop/@antha">Mastodon</a>-->
     
     <!-- import the webpage's javascript file -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js" integrity="sha256-5oApc/wMda1ntIEK4qoWJ4YItnV4fBHMwywunj8gPqc=" crossorigin="anonymous"></script>
@@ -22,24 +25,43 @@
     name: Sam צביול Auciello<br />
     born:
     <script>
-       document.write(moment("19890909", "YYYYMMDD").fromNow());
+      moment.relativeTimeRounding(t => Math.floor(t * 10) / 10);
+      document.write(moment("19890909", "YYYYMMDD").fromNow());
     </script> <br />
-    hobbies: participatory art<br />
-    long-term goals: help people get better at programming computers<br />
+    <br />
     things i do:
     <ul>
-      <li>protect the privacy of people who search for things</li>
+      <li>
+        make it easier for people to donate money to non-profit organizations<br />
+        (engineer @ <a target="_blank" href="https://givelively.org">Give Lively</a> )
+      </li>
+      <li>make art</li>
       <li>teach people how to make websites and web apps</li>
+      <li>
+        build a house that will look a bit like this:<br />
+        <img src="https://cdn.glitch.global/08da0bf4-42da-4bae-81e9-1e5582b14462/warren.jpg?v=1687840598513" style="height: 80px; display: inline-block;"><br />
+        <a href="house-progress.html">click here for progress updates</a>
+      </li>
       <li>dance</li>
     </ul>
-    disposition: extrovert<br />
-    feel free to follow <a target="_blank" href="https://twitter.com/__antha__">my twitter</a> or send me a <a target="_blank" href="http://facebook.com/sam.auciello">friend request on facebook</a><br />
-    art:
+    <p>disposition: extrovert</p>
+    <p>social media: <a rel="me" href="https://social.coop/@antha">social.coop/@antha</a></p>
+
+    <p>art by antha:</p>
     <ul>
       <li>sometimes i make <a href="graffiti.html">graffiti</a></li>
       <li>sometimes i make <a href="music.html">music</a></li>
       <li>i made a <a href="smoke.html">javascript smoke library</a></li>
       <li>i made a <a href="haggadah.html">minimalist passover haggadah</a></li>
+      <li>i made a <a href="//3d-connect-4.antha.earth/in-person" target="_blank">3D Connect 4 game</a></li>
+      <li>i made a <a href="https://daily-sun-cycle.glitch.me/" target="_blank">skybox</a></li>
+      <li>i made some <a href="unique-snowflake.html" target="_blank">snowflake</a>y interactive art</li>
+      <li>
+        i re-implemented an old 
+        <a href="https://github.com/olleicua/FreeCell" target="_blank">command line version of freecell</a>
+        (it used to be in <a href="https://github.com/olleicua/hcl" target="_blank">Hot Cocoa Lisp</a>,
+        now its in <a href="https://www.ruby-lang.org/en/" target="_blank">ruby</a>)
+      </li>
     </ul>
 
     <!-- include the Glitch button to show what the webpage is about and
@@ -49,5 +71,8 @@
       <div class="glitchButton" style="position:absolute;top:10px;right:20px;"></div>
       <script src="/glitch-button.js" defer></script>
     </div>
+
+    <script src="anthalytics.js"></script>
+    <script>Anthalytics.logPageView();</script>
   </body>
 </html>
